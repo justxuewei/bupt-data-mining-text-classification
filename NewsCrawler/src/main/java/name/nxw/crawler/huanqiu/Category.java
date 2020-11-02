@@ -117,30 +117,51 @@ public class Category {
         map.put("fashion", new CategoryInfo("fashion",
                 "\"/e3pn4vu2g/e3pn4vuih\",\"/e3pn4vu2g/e3pn61569\",\"/e3pn4vu2g/e3pn7fph9\",\"/e3pn4vu2g/e3pn7v7f6\",\"/e3pn4vu2g/e3poftkqs\",\"/e3pn4vu2g/e3pokk591\",\"/e3pn4vu2g/e3pokk591/e3pokk5ti\",\"/e3pn4vu2g/e3pokk591/e3q91thfo\",\"/e3pn4vu2g/e3pright6\",\"/e3pn4vu2g/e3prijklc\",\"/e3pn4vu2g/e3ptq4t9b\"",
                 "时尚"));
-        map.put("", new CategoryInfo("",
-                "",
-                ""));
-        map.put("", new CategoryInfo("",
-                "",
-                ""));
-        map.put("", new CategoryInfo("",
-                "",
-                ""));
-        map.put("", new CategoryInfo("",
-                "",
-                ""));
-        map.put("", new CategoryInfo("",
-                "",
-                ""));
-        map.put("", new CategoryInfo("",
-                "",
-                ""));
-        map.put("", new CategoryInfo("",
-                "",
-                ""));
-        map.put("", new CategoryInfo("",
-                "",
-                ""));
+        map.put("ent", new CategoryInfo("ent",
+                "\"/e3pmh1jtb/e3pmtdgsc\",\"/e3pmh1jtb/e3pmtdgsc/e3pmtdhgk\",\"/e3pmh1jtb/e3pmtdgsc/e3pmtdnnp\",\"/e3pmh1jtb/e3pmtdgsc/e3pmtdt2b\",\"/e3pmh1jtb/e3pmtdgsc/e3pn7e7e0\",\"/e3pmh1jtb/e3pmtdl8t\",\"/e3pmh1jtb/e3pmtdl8t/e3pmtdlph\",\"/e3pmh1jtb/e3pmtdl8t/e3pmtgk5g\",\"/e3pmh1jtb/e3pmtdl8t/e3pmti0d9\",\"/e3pmh1jtb/e3pmth0vk\",\"/e3pmh1jtb/e3pmth0vk/e3pmth1kc\",\"/e3pmh1jtb/e3pmth0vk/e3pmth41r\",\"/e3pmh1jtb/e3pmth0vk/e3pn61i89\"",
+                "娱乐"));
+        map.put("v", new CategoryInfo("v",
+                "\"/e3pmh2fmu/e3pmh2g69\",\"/e3pmh2fmu/e3pn61vrg\",\"/e3pmh2fmu/e3prkldqd\",\"/e3pmh2fmu/e3prvucof\",\"/e3pmh2fmu/e3ptgqp01\",\"/e3pmh2fmu/e3ptgqp01/e3ptrminr\"",
+                "视频"));
+        map.put("sports", new CategoryInfo("sports",
+                "\"/e3pmh3jvm/e3pn4vk37\",\"/e3pmh3jvm/e3pn4vk37/e3pn61aah\",\"/e3pmh3jvm/e3pn4vk37/e3pn62b3q\",\"/e3pmh3jvm/e3pn4vk37/e3pn638jv\",\"/e3pmh3jvm/e3pn4vk37/e3pn669vr\",\"/e3pmh3jvm/e3pn4vk37/e82e6tcpo\",\"/e3pmh3jvm/e3pn61psg\",\"/e3pmh3jvm/e3pn61psg/e3pn61qfv\",\"/e3pmh3jvm/e3pn61psg/e7tn9k8oi\",\"/e3pmh3jvm/e3pn61psg/e7tn9o6uo\",\"/e3pmh3jvm/e3pn61psg/e7tn9rf8b\",\"/e3pmh3jvm/e3pn61psg/e7tna015g\",\"/e3pmh3jvm/e3pn62e6c\",\"/e3pmh3jvm/e3pn62e6c/e3pn62euk\",\"/e3pmh3jvm/e3pn62e6c/e3prbvcgu\",\"/e3pmh3jvm/e3pn62e6c/e82e138l9\",\"/e3pmh3jvm/e3pn7fhub\",\"/e3pmh3jvm/e3pn7fhub/e3pn7fif4\",\"/e3pmh3jvm/e80lb2feu\"",
+                "体育"));
+        map.put("lx", new CategoryInfo("lx",
+                "\"/e3pmh20mi/e3pn60gah\",\"/e3pmh20mi/e3pt1kh3i\",\"/e3pmh20mi/e7ru9r4mj\",\"/e3pmh20mi/ectnin83p\",\"/e3pmh20mi/ectnissc9\",\"/e3pmh20mi/ectnj650m\",\"/e3pmh20mi/ectnjgbot\"",
+                "教育"));
+        map.put("house", new CategoryInfo("house",
+                "\"/e8nf57tcn/e8nf6ch75\"",
+                "房产"));
+        map.put("hope", new CategoryInfo("hope",
+                "\"/e3pmh4858/e3pn4u4ek\",\"/e3pmh4858/e3pttusns\",\"/e3pmh4858/e3ptucljl\",\"/e3pmh4858/e3ptucsjk\",\"/e3pmh4858/e3ptucsjk/e3ptuct5t\",\"/e3pmh4858/e3ptucsjk/e3ptud330\",\"/e3pmh4858/e3ptucsjk/e3ptv43ri\",\"/e3pmh4858/e3ptucsjk/e3ptv5fhm\",\"/e3pmh4858/e3ptucsjk/e3ptv6vdg\",\"/e3pmh4858/e3ptucsjk/e3ptva0gc\",\"/e3pmh4858/e3ptucsjk/e3ptvhqaa\",\"/e3pmh4858/e3ptucsjk/e3pu014qv\",\"/e3pmh4858/e3ptucsjk/e3pu0s7q3\",\"/e3pmh4858/e3ptucsjk/e3pu1b85j\",\"/e3pmh4858/e3ptucsjk/e3pu20n8h\",\"/e3pmh4858/e7ksn07g8\",\"/e3pmh4858/e7ksnbha2\",\"/e3pmh4858/e7lb8bavn\",\"/e3pmh4858/e7lb8pe57\",\"/e3pmh4858/e7lb91aqm\",\"/e3pmh4858/e7lb99q8k\",\"/e3pmh4858/e7lhc78q0\",\"/e3pmh4858/e7lhequu0\"",
+                "公益"));
+        map.put("society", new CategoryInfo("society",
+                "\"/e3pmh19vt/e3pmh1ar3\",\"/e3pmh19vt/e3pn7fivc\",\"/e3pmh19vt/e3prv5gfn\",\"/e3pmh19vt/e3ps21dgq\",\"/e3pmh19vt/e3ps2ueac\",\"/e3pmh19vt/e3ps46nfp\"",
+                "社会"));
+        map.put("smart", new CategoryInfo("smart",
+                "\"/e3pmh140m/e3pmh14i1\",\"/e3pmh140m/e3pmh2jgm\",\"/e3pmh140m/e3pmh31se\",\"/e3pmh140m/e3pmh4huv\",\"/e3pmh140m/e3pmh4huv/e3pmh4ign\",\"/e3pmh140m/e3pn62ehj\",\"/e3pmh140m/e3pn7fsu3\",\"/e3pmh140m/e5arbmudl\",\"/e3pmh140m/e7qeadr4p\",\"/e3pmh140m/e7qeal82i\",\"/e3pmh140m/e7qeaudr2\",\"/e3pmh140m/e7qeb3iev\",\"/e3pmh140m/e7qeb8nre\",\"/e3pmh140m/e7qebdhuc\"",
+                "智能"));
+        map.put("5gcenter", new CategoryInfo("5gcenter",
+                "\"/efphbf5l6/efphbpf42\",\"/efphbf5l6/efphbun01\",\"/efphbf5l6/efphcdkof\",\"/efphbf5l6/efphcgica\",\"/efphbf5l6/efphck30i\",\"/efphbf5l6/efphcn5t2\",\"/efphbf5l6/efphcpss5\",\"/efphbf5l6/efphcsmrj\"",
+                "5g生态"));
+        map.put("bigdata", new CategoryInfo("bigdata",
+                "\"/e3pn606hg/e3pn6072l\",\"/e3pn606hg/e3pn61287\",\"/e3pn606hg/e3ptussvj\",\"/e3pn606hg/e3ptv0m10\",\"/e3pn606hg/e81jhpqpq\",\"/e3pn606hg/e81ji3si2\",\"/e3pn606hg/e81jido1v\"",
+                "大数据"));
+        map.put("biz", new CategoryInfo("biz",
+                "\"/e3pmh1rv3/e3pmh1sfd\",\"/e3pmh1rv3/e3pmh2e3h\",\"/e3pmh1rv3/e3pn60lt0\",\"/e3pmh1rv3/e3pn60rqk\",\"/e3pmh1rv3/e3pn60urv\",\"/e3pmh1rv3/e3pn614r6\",\"/e3pmh1rv3/e3pn61ned\",\"/e3pmh1rv3/e3pn62hv9\",\"/e3pmh1rv3/e3pn63btp\",\"/e3pmh1rv3/e3pn63m00\",\"/e3pmh1rv3/e3pok2bl1\",\"/e3pmh1rv3/e3pu1lrsc\",\"/e3pmh1rv3/e3pu1okro\",\"/e3pmh1rv3/e6a3d64vd\",\"/e3pmh1rv3/e6a3d6rr6\",\"/e3pmh1rv3/e7nopb37v\",\"/e3pmh1rv3/e7qcj6l0g\"",
+                "商业"));
+        map.put("oversea", new CategoryInfo("oversea",
+                "\"/e3pmt7bdh/e3pn4bc7q\",\"/e3pmt7bdh/e3pn5250c\",\"/e3pmt7bdh/e3pn6g8t8\"",
+                "海外看中国"));
+        map.put("cul", new CategoryInfo("cul",
+                "\"/e3pn677q4/e3ptvpbdi\",\"/e3pn677q4/e7n7nshou\",\"/e3pn677q4/e7n7nshou/e7n7o5sgv\",\"/e3pn677q4/e7n7nshou/e7n7oddi8\",\"/e3pn677q4/e7n7nshou/e7n7oj8js\",\"/e3pn677q4/e7n7nshou/e7n7opklk\",\"/e3pn677q4/e7n7nshou/e80schtc2\",\"/e3pn677q4/e7n7qip93\",\"/e3pn677q4/e7n7qip93/e7n7quqav\",\"/e3pn677q4/e7n7qip93/e7n7r604h\",\"/e3pn677q4/e7n7qip93/e7n7rlouf\",\"/e3pn677q4/e7n7s45fv\",\"/e3pn677q4/e7n7s45fv/e7n7safa1\",\"/e3pn677q4/e7n7s45fv/e7n7silkh\",\"/e3pn677q4/e7n7s45fv/e7n7sqsjs\",\"/e3pn677q4/e7n836lt3\",\"/e3pn677q4/e7n83ff31\",\"/e3pn677q4/e7n83ff31/e7n83ll7b\",\"/e3pn677q4/e7n83ff31/e7n83scbg\",\"/e3pn677q4/e7n83ff31/e7n8421o7\",\"/e3pn677q4/e7n84b0u1\",\"/e3pn677q4/e7n84le0h\",\"/e3pn677q4/e7n856422\"",
+                "文化"));
+        map.put("capital", new CategoryInfo("capital",
+                "\"/e5d59phvs/e5d5m10mv\",\"/e5d59phvs/e5d5m10mv/e5d5o560g\",\"/e5d59phvs/e5d5m10mv/e5d5oecei\",\"/e5d59phvs/e5d5m10mv/e5d5pk5dq\",\"/e5d59phvs/e5d5m10mv/e5d5q73kg\",\"/e5d59phvs/e5d5qjh4s\",\"/e5d59phvs/e5d5qjh4s/e5d5qp63c\",\"/e5d59phvs/e5d5qjh4s/e5d5sanu9\",\"/e5d59phvs/e5d5qjh4s/e5d5sjom2\",\"/e5d59phvs/e5d5svess\",\"/e5d59phvs/e5d5svess/e5d5t6l0v\",\"/e5d59phvs/e5d5svess/e5d5tee08\",\"/e5d59phvs/e5d5svess/e5d5tp81t\",\"/e5d59phvs/e5d5svess/e5d5tvudv\",\"/e5d59phvs/e5d5u9tt0\",\"/e5d59phvs/e5d5u9tt0/e5d5uf626\",\"/e5d59phvs/e5d5u9tt0/e5d5uktk9\",\"/e5d59phvs/e5d5u9tt0/e5d5uqcrs\",\"/e5d59phvs/e5d5u9tt0/e5d5v01f0\",\"/e5d59phvs/e63f43ge6\",\"/e5d59phvs/e63f43ge6/e63f43h0u\",\"/e5d59phvs/e63f43ge6/e63fcq9bt\",\"/e5d59phvs/e63j24g2m\",\"/e5d59phvs/e63j24g2m/e63j24goo\"",
+                "创投"));
+        map.put("chamber", new CategoryInfo("chamber",
+                "\"/e3pu1oj7h/e3pu1ok69\"",
+                "商协"));
     }
 
     static String extractCategory(String url) {
