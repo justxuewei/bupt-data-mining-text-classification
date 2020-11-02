@@ -2,7 +2,7 @@
 .DS_Store
 
 # Crawl Path
-HuanqiuCrawler
+NewsCrawler/HuanqiuCrawler
 NewsCrawler/crawl
 
 # Java

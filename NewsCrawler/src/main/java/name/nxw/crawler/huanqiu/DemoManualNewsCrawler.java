@@ -1,3 +1,5 @@
+package name.nxw.crawler.huanqiu;
+
 import cn.edu.hfut.dmic.webcollector.model.CrawlDatums;
 import cn.edu.hfut.dmic.webcollector.model.Page;
 import cn.edu.hfut.dmic.webcollector.plugin.rocks.BreadthCrawler;
@@ -26,9 +28,6 @@ public class DemoManualNewsCrawler extends BreadthCrawler {
 
         setThreads(50);
         getConf().setTopN(100);
-
-        //enable resumable mode
-        //setResumable(true);
     }
 
     @Override

@@ -1,15 +1,14 @@
 package name.nxw.crawler.huanqiu;
 
+import name.nxw.crawler.huanqiu.exception.CategoryNotFoundException;
+import name.nxw.crawler.huanqiu.exception.PortalGenerationException;
+
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * mil -> mil
- *
- */
 public class Category {
 
-    private static class CategoryInfo {
+    public static class CategoryInfo {
         private String id;
         private String node;
         private final String description;
@@ -49,13 +48,13 @@ public class Category {
             return description;
         }
 
-        public Boolean getHasPortal() {
+        public Boolean hasPortal() {
             return hasPortal;
         }
     }
 
     // key: prefix, value: category info
-    private static Map<String, CategoryInfo> map;
+    private static final Map<String, CategoryInfo> map;
 
     static {
         map = new HashMap<>();
@@ -164,24 +163,40 @@ public class Category {
                 "商协"));
     }
 
-    static String extractCategory(String url) {
-        return "";
+    public static boolean contains(String category) {
+        return map.containsKey(category);
     }
 
-    static String portal(String category) {
-        return "";
+    public static CategoryInfo info(String category) throws CategoryNotFoundException {
+        CategoryInfo info = map.get(category);
+        if (info == null) {
+            throw new CategoryNotFoundException();
+        }
+        return info;
     }
 
-    static String categoryId(String category) {
-        return "";
-    }
-
-    static String categoryNode(String category) {
-        return "";
-    }
-
-    static String categoryDescription(String category) {
-        return "";
-    }
+//    public static String id(String category) throws CategoryNotFoundException {
+//        CategoryInfo info = map.get(category);
+//        if (info == null) {
+//            throw new CategoryNotFoundException();
+//        }
+//        return info.getId();
+//    }
+//
+//    public static String node(String category) throws CategoryNotFoundException {
+//        CategoryInfo info = map.get(category);
+//        if (info == null) {
+//            throw new CategoryNotFoundException();
+//        }
+//        return info.node;
+//    }
+//
+//    static String description(String category) throws CategoryNotFoundException {
+//        CategoryInfo info = map.get(category);
+//        if (info == null) {
+//            throw new CategoryNotFoundException();
+//        }
+//        return info.getDescription();
+//    }
 
 }
