@@ -1,6 +1,5 @@
 package name.nxw.crawler.huanqiu;
 
-import cn.edu.hfut.dmic.contentextractor.News;
 import cn.edu.hfut.dmic.webcollector.model.CrawlDatums;
 import cn.edu.hfut.dmic.webcollector.model.Page;
 import cn.edu.hfut.dmic.webcollector.plugin.rocks.BreadthCrawler;
@@ -14,8 +13,7 @@ import java.nio.charset.StandardCharsets;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -134,8 +132,15 @@ public class HuanqiuCrawler extends BreadthCrawler {
     }
 
     public static void main(String[] args) throws Exception {
-        HuanqiuCrawler mil = new HuanqiuCrawler("HuanqiuCrawler", true, "mil",
-                5000, 20, 5, 100000);
-        mil.start(1000000);
+        for (Entry<String, Category.CategoryInfo> entry: Category.map.entrySet()) {
+            String category = entry.getKey();
+            Category.CategoryInfo info = entry.getValue();
+            if (!info.hasPortal()) continue;
+            String crawlPath = String.format("%sCrawlerPath", category);
+            HuanqiuCrawler crawler = new HuanqiuCrawler(crawlPath, true, category,
+                    10000, 20, 50, 10000);
+            crawler.getConf().setExecuteInterval(5000);
+            crawler.start(10000);
+        }
     }
 }

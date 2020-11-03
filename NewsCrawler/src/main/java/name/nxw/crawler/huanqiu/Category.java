@@ -54,7 +54,7 @@ public class Category {
     }
 
     // key: prefix, value: category info
-    private static final Map<String, CategoryInfo> map;
+    public static final Map<String, CategoryInfo> map;
 
     static {
         map = new HashMap<>();

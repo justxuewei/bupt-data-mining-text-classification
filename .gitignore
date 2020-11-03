@@ -2,12 +2,13 @@
 .DS_Store
 
 # Crawl Path
-NewsCrawler/HuanqiuCrawler
+NewsCrawler/*CrawlerPath
 NewsCrawler/crawl
 
 # Java
 
 # Compiled class file
+target
 *.class
 
 # Log file
