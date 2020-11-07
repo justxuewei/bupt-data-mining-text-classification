@@ -1,9 +1,13 @@
 .idea
 .DS_Store
+venv
 
 # Crawl Path
 NewsCrawler/*CrawlerPath
 NewsCrawler/crawl
+
+# Dataset
+*.csv
 
 # Java
 
