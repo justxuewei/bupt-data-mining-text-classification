@@ -58,13 +58,16 @@ def corpus(sw, limit=-1):
     return c
 
 
-def tf_idf(c):
+def tf_idf(c, tf_idf_params=None):
     """
     calculate tf-idf
     :param c: corpus list
+    :param tf_idf_params: parameters for TfidfVectorizer
     :return: data frame
     """
-    vector = TfidfVectorizer()
+    if tf_idf_params is None:
+        tf_idf_params = {}
+    vector = TfidfVectorizer(**tf_idf_params)
     tf = vector.fit_transform(c)
     return pd.DataFrame(tf.toarray(), columns=vector.get_feature_names())
 
@@ -73,5 +76,7 @@ if __name__ == "__main__":
     stop_words = load_stop_words()
     # participle
     corpus = corpus(stop_words)
-    tf_idf = tf_idf(corpus)
-    tf_idf.to_csv("tf_idf.csv")
+    tf_idf = tf_idf(corpus, tf_idf_params={
+        "max_features": 80
+    })
+    tf_idf.to_csv("/Volumes/Data/tf_idf.csv")
