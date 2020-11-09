@@ -1,6 +1,7 @@
 .idea
 .DS_Store
 venv
+__pycache__
 
 # Crawl Path
 NewsCrawler/*CrawlerPath
