@@ -2,7 +2,7 @@ import json
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import preprocessing
-from model import NaiveBayes
+from model import MultinomialNaiveBayes
 import numpy as np
 
 
@@ -36,29 +36,31 @@ def tf_idf_dataset(dataset, tf_idf_params):
     :param tf_idf_params: parameters for tf_idf
     :return: vectors, which the last column is for category and the rest are vector
     """
+    cat_mapper = preprocessing.load_category_mapper()
     sws = preprocessing.load_stop_words()
     c = preprocessing.corpus(dataset, sws)
     tf_idf = preprocessing.tf_idf(c, tf_idf_params)
     cats = np.zeros((tf_idf.shape[0],))
     count = 0
     for _, r in dataset.iterrows():
-        cats[count] = r["category"]
+        cats[count] = cat_mapper[r["category"]]
         count += 1
     # tf_idf.insert(loc=len(tf_idf.columns), column="category", value=cats)
     return tf_idf.to_numpy(), cats
 
 
 if __name__ == "__main__":
-    sample_dataset = pd.read_csv("dataminingnews-sample.csv").sample(1000)
+    sample_dataset = pd.read_csv("dataminingnews-sample.csv").sample(100)
     train, test = train_test_split(sample_dataset, test_size=0.3)
     X_train, Y_train = tf_idf_dataset(train, {
         "max_features": max_features
     })
-    # if_idf_test_dataset = tf_idf_dataset(test, {
-    #     "max_features": max_features
-    # })
-    naive_bayes = NaiveBayes()
-    naive_bayes.train(X_train, Y_train)
+    X_test, Y_test = tf_idf_dataset(test, {
+        "max_features": max_features
+    })
+    m_naive_bayes = MultinomialNaiveBayes()
+    m_naive_bayes.train(X_train, Y_train)
+    m_naive_bayes.predict(X_test[0])
 
     # category_stat(sample_dataset)
     # stop_words = preprocessing.load_stop_words()

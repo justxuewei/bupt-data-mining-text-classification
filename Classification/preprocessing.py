@@ -1,6 +1,13 @@
+import json
+
 import jieba
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
+
+
+def load_category_mapper():
+    with open("./category_mapper.json", "r") as file:
+        return json.loads(file.read())
 
 
 def __is_chinese(uchar):

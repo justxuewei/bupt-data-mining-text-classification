@@ -1,1 +1,2 @@
 from model.naive_bayes import NaiveBayes
+from model.multinomial_naive_bayes import MultinomialNaiveBayes
