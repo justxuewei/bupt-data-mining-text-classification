@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 import preprocessing
 from model import NaiveBayes
+import numpy as np
 
 
 max_features = 500
@@ -38,30 +39,26 @@ def tf_idf_dataset(dataset, tf_idf_params):
     sws = preprocessing.load_stop_words()
     c = preprocessing.corpus(dataset, sws)
     tf_idf = preprocessing.tf_idf(c, tf_idf_params)
-    cats = list()
-    for i, r in dataset.iterrows():
-        cats.append(r["category"])
-    tf_idf.insert(loc=len(tf_idf.columns), column="category", value=cats)
-    return tf_idf
+    cats = np.zeros((tf_idf.shape[0],))
+    count = 0
+    for _, r in dataset.iterrows():
+        cats[count] = r["category"]
+        count += 1
+    # tf_idf.insert(loc=len(tf_idf.columns), column="category", value=cats)
+    return tf_idf.to_numpy(), cats
 
 
 if __name__ == "__main__":
     sample_dataset = pd.read_csv("dataminingnews-sample.csv").sample(1000)
     train, test = train_test_split(sample_dataset, test_size=0.3)
-    if_idf_training_dataset = tf_idf_dataset(train, {
+    X_train, Y_train = tf_idf_dataset(train, {
         "max_features": max_features
     })
-    if_idf_test_dataset = tf_idf_dataset(test, {
-        "max_features": max_features
-    })
-    naive_bayes = NaiveBayes(if_idf_training_dataset)
-    for _, test_data in if_idf_test_dataset.iterrows():
-        x = test_data.head(len(if_idf_test_dataset.columns) - 1).to_numpy()
-        cat = test_data["category"]
-        probabilities = naive_bayes.predict(x)
-        print(probabilities)
-        print(cat)
-        print()
+    # if_idf_test_dataset = tf_idf_dataset(test, {
+    #     "max_features": max_features
+    # })
+    naive_bayes = NaiveBayes()
+    naive_bayes.train(X_train, Y_train)
 
     # category_stat(sample_dataset)
     # stop_words = preprocessing.load_stop_words()

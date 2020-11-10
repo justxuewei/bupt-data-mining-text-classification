@@ -1,3 +1,6 @@
+import numpy as np
+
+
 class NaiveBayes(object):
     def __init__(self):
         self.__X_train = None
@@ -50,15 +53,15 @@ class NaiveBayes(object):
             class_value = self.__Y_train[i]
             document = self.__X_train[i]
             if class_value not in separated:
-                separated[class_value] = list()
-            separated[class_value].append(document)
+                separated[class_value] = np.zeros((self.__X_train.shape[1],))
+            separated[class_value][i] = document
         return separated
 
     def summarize_by_class(self, separated):
         summarise = dict()
         for class_value, rows in separated.items():
             s = list()
-            
+
         return summarise
 
     def train(self, X, Y):
@@ -70,11 +73,12 @@ class NaiveBayes(object):
         """
         X_shape = X.shape
         Y_shape = Y.shape
-        assert(X_shape[0] == Y_shape[0])
+        assert (X_shape[0] == Y_shape[0])
         self.__X_train = X
         self.__Y_train = Y
         separated = self.separate_by_class()
-        summarise = self.summarize_by_class(separated)
+        # summarise = self.summarize_by_class(separated)
+        print(separated)
 
     def predict(self, x):
         pass

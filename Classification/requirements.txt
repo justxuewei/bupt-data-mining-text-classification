@@ -1,3 +1,4 @@
 jieba
 pandas
 scikit-learn
+numpy
