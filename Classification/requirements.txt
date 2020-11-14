@@ -2,3 +2,6 @@ jieba
 pandas
 scikit-learn
 numpy
+matplotlib
+wordcloud
+python-bidi
