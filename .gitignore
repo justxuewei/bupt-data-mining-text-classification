@@ -10,6 +10,8 @@ NewsCrawler/crawl
 
 # Dataset
 *.csv
+*.pkl
+*.npy
 
 # Java
 

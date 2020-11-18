@@ -1,14 +1,14 @@
 {
-    "edu": 9,
-    "ent": 10,
-    "fashion": 11,
-    "finance": 12,
-    "game": 13,
-    "health": 14,
-    "mil": 19,
-    "politics": 22,
-    "society": 25,
-    "sports": 26,
-    "stock": 27,
-    "tech": 28
+    "edu": 0,
+    "ent": 1,
+    "fashion": 2,
+    "finance": 3,
+    "game": 4,
+    "health": 5,
+    "mil": 6,
+    "politics": 7,
+    "society": 8,
+    "sports": 9,
+    "stock": 10,
+    "tech": 11
 }
