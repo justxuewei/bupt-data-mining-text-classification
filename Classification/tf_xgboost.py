@@ -25,10 +25,11 @@ train_y_path = "news-train-y.pkl"
 test_X_path = "news-test-X.pkl"
 test_y_path = "news-test-y.pkl"
 # xgboost
+# max_depth = 6, learning_rate = 0.1, n_estimators = 500 -> 0.92
+# max_depth = 6, learning_rate = 0.1, n_estimators = 1000 -> 0.92
 max_depth = 6
 learning_rate = 0.1
-n_estimators = 500
-silent = False
+n_estimators = 1000
 objective = 'multi:softmax'
 
 
@@ -72,19 +73,18 @@ if __name__ == "__main__":
         with open(train_X_path, "rb") as f:
             train_X = pickle.load(f)
         print(">>> Task 2/4: train_y")
-        train_y = np.load(file=train_y_path)
+        train_y = np.load(file=train_y_path+".npy")
         print(">>> Task 3/4: test_X")
         with open(test_X_path, "rb") as f:
             test_X = pickle.load(f)
         print(">>> Task 4/4: test_y")
-        test_y = np.load(file=test_y_path)
+        test_y = np.load(file=test_y_path+".npy")
     print(f"train_X.shape: {train_X.shape}", f"train_y.shape: {train_y.shape}",
           f"test_X.shape: {test_X.shape}", f"test_y.shape: {test_y.shape}")
     print(">>> XGBoost")
     model = xgb.XGBClassifier(max_depth=max_depth,
                               learning_rate=learning_rate,
                               n_estimators=n_estimators,
-                              silent=silent,
                               objective=objective)
     model.fit(train_X, train_y)
     pred_y = model.predict(test_X)
