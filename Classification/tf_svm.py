@@ -26,6 +26,10 @@ test_y_path = "news-test-y.pkl"
 svm_C = 30.0
 svm_class_weight = None
 svm_tol = 0.001
+# persistence
+load_model_from_file = False
+should_persistence = True
+model_persistence_path = "svm_model.pkl"
 
 
 if __name__ == "__main__":
@@ -76,9 +80,18 @@ if __name__ == "__main__":
         test_y = np.load(file=test_y_path+".npy")
     print(f"train_X.shape: {train_X.shape}", f"train_y.shape: {train_y.shape}",
           f"test_X.shape: {test_X.shape}", f"test_y.shape: {test_y.shape}")
-    print(">>> SVM")
-    model = svm.LinearSVC(C=svm_C, class_weight=svm_class_weight, tol=svm_tol)
-    model.fit(train_X, train_y)
+    if load_model_from_file:
+        print(f">>> Load model from \"{model_persistence_path}\"")
+        with open(model_persistence_path, "rb") as f:
+            model = pickle.load(f)
+    else:
+        print(">>> SVM")
+        model = svm.LinearSVC(C=svm_C, class_weight=svm_class_weight, tol=svm_tol)
+        model.fit(train_X, train_y)
+        if should_persistence:
+            print(">>> Persist the model.")
+            with open(model_persistence_path, "wb") as f:
+                pickle.dump(model, f)
     pred_y = model.predict(test_X)
     print(">>> Assess")
     print(f"accuracy_score: {accuracy_score(test_y, pred_y)}")
