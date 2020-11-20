@@ -96,10 +96,10 @@ if __name__ == "__main__":
                                   n_estimators=n_estimators,
                                   objective=objective)
         model.fit(train_X, train_y)
-    if not load_model_from_file and should_persistence:
-        print(">>> Persist the model.")
-        with open(model_persistence_path, "wb") as f:
-            pickle.dump(model, f)
+        if should_persistence:
+            print(">>> Persist the model.")
+            with open(model_persistence_path, "wb") as f:
+                pickle.dump(model, f)
     pred_y = model.predict(test_X)
     print(">>> Assess")
     print(f"accuracy_score: {accuracy_score(test_y, pred_y)}")
