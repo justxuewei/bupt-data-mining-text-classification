@@ -1,7 +1,7 @@
 jieba
 pandas
 scikit-learn
-numpy
+numpy==1.19.3
 jupyterlab
 xgboost
 lightgbm
