@@ -6,7 +6,7 @@ import pickle
 
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import confusion_matrix, classification_report
 
 from foundation import generate_corpus, stop_words, generate_y
 
@@ -101,8 +101,8 @@ if __name__ == "__main__":
             with open(model_persistence_path, "wb") as f:
                 pickle.dump(model, f)
     pred_y = model.predict(test_X)
-    print(">>> Assess")
-    print(f"accuracy_score: {accuracy_score(test_y, pred_y)}")
-    print(f"precision_score: {precision_score(test_y, pred_y, average='weighted')}")
-    print(f"recall_score: {recall_score(test_y, pred_y, average='weighted')}")
-    print(f"f1_score: {f1_score(test_y, pred_y, average='weighted')}")
+
+    print(">>> Classification Report")
+    print(classification_report(test_y, pred_y))
+    print(">>> Confusion Matrix")
+    print(confusion_matrix(test_y, pred_y))
